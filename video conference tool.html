@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Conferencing</title>
+    <link rel="stylesheet" href="video conference tool.css">
+</head>
+<body>
+    <header>
+        <h1>Video Conferencing</h1>
+    </header>
+    <main>
+        <div class="video-container">
+            <div class="local-video">
+                <video id="localVideo" autoplay muted></video>
+            </div>
+            <div class="remote-videos" id="remoteVideos">
+                <!-- Remote videos will appear here -->
+            </div>
+        </div>
+        <div class="controls">
+            <button id="startButton">Start Video</button>
+            <button id="stopButton">Stop Video</button>
+            <textarea id="chatMessages" placeholder="Chat"></textarea>
+            <button id="sendMessage">Send</button>
+        </div>
+    </main>
+    <script src="video conference tool.js"></script>
+</body>
+</html>
