@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Tool</title>
+    <style>
+        /* CSS styles go here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .user-list {
+            list-style: none;
+            padding: 0;
+        }
+        .user-list li {
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+        .task-list li {
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Project Management Tool</h1>
+
+        <!-- User List -->
+        <h2>User List</h2>
+        <ul class="user-list">
+            <li>User 1</li>
+            <li>User 2</li>
+            <li>User 3</li>
+        </ul>
+
+        <!-- Task List -->
+        <h2>Task List</h2>
+        <ul class="task-list">
+            <li>
+                <strong>Task 1:</strong> Create homepage design
+                <button onclick="assignTask('User 1', 'Task 1')">Assign</button>
+            </li>
+            <li>
+                <strong>Task 2:</strong> Implement user authentication
+                <button onclick="assignTask('User 2', 'Task 2')">Assign</button>
+            </li>
+			<li>
+                <strong>Task 3:</strong> Display user`s requirement 
+                <button onclick="assignTask('User 3', 'Task 3')">Assign</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        // JavaScript code for assigning tasks goes here
+        function assignTask(user, task) {
+            // In a real application, you would send this information to the server.
+            alert(`Assigned ${task} to ${user}`);
+        }
+    </script>
+</body>
+</html>

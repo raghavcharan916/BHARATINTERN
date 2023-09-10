@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Content Management</title>
+    <style>
+        /* CSS styles for your interface go here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .blog-post {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Blog Content Management</h1>
+        <div id="addBlogPost">
+            <h2>Add a New Blog Post</h2>
+            <form id="blogForm">
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div>
+                    <label for="content">Content:</label>
+                    <textarea id="content" rows="4" required></textarea>
+                </div>
+                <div>
+                    <label for="image">Image URL:</label>
+                    <input type="text" id="image">
+                </div>
+                <div>
+                    <label for="video">Video URL:</label>
+                    <input type="text" id="video">
+                </div>
+                <button type="submit">Add Blog Post</button>
+            </form>
+        </div>
+        <div id="blogPosts">
+            <!-- Blog posts will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code for managing blog posts goes here
+        document.getElementById("blogForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Get input values
+            const title = document.getElementById("title").value;
+            const content = document.getElementById("content").value;
+            const image = document.getElementById("image").value;
+            const video = document.getElementById("video").value;
+
+            // Create a new blog post element
+            const blogPost = document.createElement("div");
+            blogPost.className = "blog-post";
+            blogPost.innerHTML = `
+                <h2>${title}</h2>
+                <p>${content}</p>
+                ${image ? `<img src="${image}" alt="${title}" style="max-width: 100%;">` : ''}
+                ${video ? `<iframe width="100%" height="315" src="${video}" frameborder="0" allowfullscreen></iframe>` : ''}
+            `;
+
+            // Add the new blog post to the list
+            const blogPosts = document.getElementById("blogPosts");
+            blogPosts.appendChild(blogPost);
+
+            // Clear form fields
+            document.getElementById("blogForm").reset();
+        });
+    </script>
+</body>
+</html>
